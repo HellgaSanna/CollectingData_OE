@@ -1,0 +1,12 @@
+import requests
+from pprint import pprint
+
+response = requests.get('https://api.vk.com/method/users.getFollowers?user_ids=hellga_sanna&fields=books&access_token=e047aee01d0d474266665d835de94b4affd37db5afbd62207b49cb7018cacf59c7a8c61d9322ddf25a3ae&v=5.131')
+
+if response.ok:
+    pass
+j_data=response.json()
+pprint(j_data)
+
+with open("C:/Users/o.evtushenko/Documents/l1_data_collecting_OE.json", "w", encoding="utf-8") as file:
+    json.dump(j_data, file)
